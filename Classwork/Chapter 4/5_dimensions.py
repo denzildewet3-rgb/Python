@@ -1,4 +1,6 @@
 # Tuples - Python refers to values that cannot change as TUPLE
+# TUPLES IS INDICATED WITH THE NORMAL BRACKETS () AND NOT LIKE THE VARIABLES
+# THAT IS INDICATED WITH []
 dimensions = (200, 50)
 print(dimensions[0])
 print(dimensions[1])
