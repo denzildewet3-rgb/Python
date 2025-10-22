@@ -92,7 +92,19 @@ else:
 print("\n")
 
 # Using Multiple Lists
-available_toppings = ['mushrooms', 'olives', 'green peppers', 'pepperoni', 'pineapple', 'extra cheese']
+# Summary
+# This Python program simulates ordering a pizza with specific toppings.
+# It first defines two lists:
+# available_toppings: the toppings the pizza shop has.
+# requested_toppings: the toppings the customer wants.
+# The for loop checks each requested topping:
+# If the topping is available, it prints a message like “Adding mushrooms.”
+# If it’s not available, it prints “Sorry, we don't have french fries.”
+# After checking all toppings, it prints “Finished making your pizza!” to 
+# indicate the order is complete.
+
+available_toppings = ['mushrooms', 'olives', 'green peppers', 'pepperoni', 
+                      'pineapple', 'extra cheese']
 requested_toppings = ['mushrooms', 'french fries', 'extra cheese']
 
 for requested_topping in requested_toppings:
