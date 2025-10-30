@@ -1,0 +1,6 @@
+In Python you can print text to the screen.
+In Python you can store information in variables.
+In Python you can create classes
+In Python you can create sub classes
+In Python you van create while and for loops
+In Python you can read and write files easily.
