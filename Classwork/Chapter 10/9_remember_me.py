@@ -81,7 +81,14 @@ def get_stored_username(path):
 def get_new_username(path):
     """Prompt for a new username."""
 
-    username = input("What is your name? ")
+    name = input("What is your name? ")
+    age = input("How old are you? ")
+    location = input("Where do you live? ")
+    
+    username = {"name": name,
+                "age": age,
+                "location": location}
+    
     contents = json.dumps(username)
     path.write_text(contents)
     return username
@@ -92,9 +99,18 @@ def greet_user():
     username = get_stored_username(path)
 
     if username:
-        print(f"Welcome back, {username}!")
+        print(f"Is this you, {username["name"]}? yes/no")
+        answer = input("> ").lower()
+        
+        if answer == "yes":
+            print(f"Welcome back, {username["name"]}!")
+            print(f"I remember you're {username["age"]} years old and live in {username["location"]}")
+        else:
+            username = get_new_username(path)
+            print(f"We'll remember you when you come back, {username["name"]}!")
+
     else:
         username = get_new_username(path)
-        print(f"We'll remember you when you come back, {username}!")
+        print(f"We'll remember you when you come back, {username["name"]}!")
 
 greet_user()
