@@ -1,6 +1,7 @@
 # Creating a ship class
 import pygame
 from pygame.sprite import Sprite
+from pathlib import Path
 
 class Ship(Sprite):
     """A class to manage the ship"""
@@ -13,8 +14,13 @@ class Ship(Sprite):
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
         
+        # Build a robust path to the ship image
+        BASE_DIR = Path(__file__).parent
+        IMAGES_DIR = BASE_DIR / "images"
+        ship_image_path = IMAGES_DIR / "ship.png"
+        
         # Load the ship image and get it rect.
-        original_image = pygame.image.load('images/ship.png')
+        original_image = pygame.image.load(str(ship_image_path))
         
         # Resize the image.
         self.image = pygame.transform.scale(original_image, (width, height))

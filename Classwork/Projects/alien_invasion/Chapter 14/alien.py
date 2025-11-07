@@ -1,5 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
+from pathlib import Path
 
 class Alien(Sprite):
     """A class to represent a single alien in the fleet."""
@@ -10,8 +11,13 @@ class Alien(Sprite):
         self.screen = ai_game.screen
         self.settings = ai_game.settings
         
+        # Build a robust path to the alien image
+        BASE_DIR = Path(__file__).parent
+        IMAGES_DIR = BASE_DIR / "images"
+        alien_image_path = IMAGES_DIR / "alien.png"
+        
         # Load the Alien image and set its rect attribute
-        self.image = pygame.image.load("images/alien.png")
+        self.image = pygame.image.load(str(alien_image_path))
         self.image = pygame.transform.scale(self.image,(55, 60))
         self.rect = self.image.get_rect()
         

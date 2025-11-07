@@ -55,7 +55,7 @@ class Alien_invasion:
                 self._update_aliens()
                         
             self._update_screen()
-            self.clock.tick(60) # Controlling the frame rate
+            self.clock.tick(60) # Controlling the frame rate (frames per second)
                       
                  
     def _check_events(self):
@@ -267,3 +267,41 @@ if __name__ == '__main__':
     # Make a game instance, and run the game.
     ai = Alien_invasion()
     ai.run_game()
+    
+    
+    
+# =====================================================================================================
+# Chat GPT SUMMARY
+# =====================================================================================================
+# Main Components:
+# 1. Alien_invasion Class: The core game manager that handles:
+#   - Initialization of Pygame and game settings.
+#   - Creation of the ship, bullets, aliens, scoreboard, and play button.
+#   - The main game loop (run_game) which handles events, updates game objects, and redraws the screen.
+# =====================================================================================================
+# 2. Event Handling:
+#   - Responds to keyboard input (move ship left/right, fire bullets, quit).
+#   - Responds to mouse clicks (start game via play button).
+# =====================================================================================================
+# 3. Game Objects:
+#   - Ship: Player-controlled ship that can move left/right.
+#   - Bullet: Fired by the ship to destroy aliens.
+#   - Alien: Enemy ships that move in a fleet.
+#   - Scoreboard: Tracks and displays score, level, and remaining ships.
+#   - Button: The "Play" button to start/restart the game.
+# =====================================================================================================
+# 4. Game Mechanics:
+#   - Bullet collisions: Bullets remove aliens and increase score.
+#   - Alien fleet: Moves as a group, changes direction when hitting edges, and drops down.
+#   - Ship collisions: If the ship is hit or an alien reaches the bottom, the player loses a life.
+#   - Levels & Speed: After clearing all aliens, a new fleet is created and the game speed increases.
+# =====================================================================================================
+# 5. Screen Updating:
+#   - Draws all game elements and refreshes the screen at 60 FPS.
+#   - Shows the score and play button when the game is inactive.
+# =====================================================================================================
+# 6. Game Flow:
+#   - Game starts when the play button is clicked.
+#   - Player controls the ship, fires bullets, destroys aliens, and progresses through levels.
+#   - Game ends when the player runs out of lives.
+# =====================================================================================================

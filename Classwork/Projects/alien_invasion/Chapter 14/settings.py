@@ -1,5 +1,6 @@
 # Creating a settings class
 import pygame
+from pathlib import Path
 
 class Settings:
     """A class to store all settings for Alien Invasion."""
@@ -10,8 +11,13 @@ class Settings:
         # Screen Settings
         self.screen_width = 1200
         self.screen_height = 800
+        
+        # Base folder of this file (Chapter 14)
+        BASE_DIR = Path(__file__). parent
+        IMAGES_DIR = BASE_DIR / "images"
+        
         # self.bg_color = (230, 230, 230)
-        self.background = pygame.image.load('images/background.jpg')
+        self.background = pygame.image.load(str(IMAGES_DIR / "background.jpg"))
         self.background = pygame.transform.scale(self.background, (1200, 800))
         
         # Bullet Settings
